@@ -146,7 +146,6 @@ class babelPlugin extends Plugin
         try {
             $this->grav['babel']->selectIndex();
             $msg = $this->grav['babel']->babel->totalDocumentsInCollection() . ' definitions indexed';
-            $msg = $this->grav['babel']->babel->totalDocumentsInCollection() . ' definitions indexed';
             
         } catch (IndexNotFoundException $e) {
             $status = false;
