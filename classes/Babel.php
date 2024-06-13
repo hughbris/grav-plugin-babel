@@ -353,7 +353,28 @@ class Babel
         return $content;
     }
     
-    
+
+    /**
+     * Get the status of currently indexed documents
+     *
+     * @return array
+     */
+    public function getIndexStatus()
+    {
+        $status = true;
+        $size = 0;
+        try {
+            $this->selectIndex();
+            $size = $this->babel->totalDocumentsInCollection();
+            $msg = "$size definitions indexed";
+
+        } catch (IndexNotFoundException $e) {
+            $status = false;
+            $msg = "Index not created";
+        }
+        return [$status, $msg, $size];
+    }
+
     public function createIndex()
     {
         $this->babel->setDatabaseHandle($this->babelConnector);
