@@ -14,8 +14,6 @@ use Grav\Plugin\BabelConnector;
 use \Grav\Common\Twig\TwigExtension;
 use Grav\Plugin\BabelPlugin;
 
-require __dir__ . '/BabelConnector.php';
-
 class Babel
 {
     public $babel;

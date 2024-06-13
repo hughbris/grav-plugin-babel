@@ -15,12 +15,6 @@ use ReflectionProperty;
 use TeamTNT\TNTSearch\Exceptions\IndexNotFoundException;
 use Grav\Common\File\CompiledYamlFile;
 
-require __DIR__ . '/classes/Babel.php';
-require __DIR__ . '/classes/BabelSearch.php';
-require __DIR__ . '/classes/BabelResultObject.php';
-require __DIR__ . '/classes/BabelIndexer.php';
-
-
 class babelPlugin extends Plugin
 {
     /**
