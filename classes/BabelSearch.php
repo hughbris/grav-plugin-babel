@@ -627,7 +627,7 @@ class BabelSearch
             return;
         }
         $globOptions = array('remove_all_path' => TRUE);
-        $zipArchive->addGlob($storage . $domain . DS . '*' . YAML_EXT, GLOB_BRACE, $globOptions);
+        $zipArchive->addGlob($storage . $domain . DS . '*' . YAML_EXT, 0, $globOptions);
         if (!$zipArchive->status == \ZipArchive::ER_OK) {
             Grav::instance()['log']->info('addGlob failed...');
             return;
