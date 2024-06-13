@@ -232,9 +232,10 @@ class Babel
     
     public function trackThemeVariables()
     {
-        $locator = Grav::instance()['locator'];
-        $language_file = $locator->findResource("theme://languages" . YAML_EXT);
-        $codes = Grav::instance()['config']->get('plugins.babel.translation_sets', ['en']);
+        $grav = Grav::instance();
+        $locator = $grav['locator'];
+        $language_file = $locator->findResource("themes://*/languages" . YAML_EXT);
+        $codes = $grav['config']->get('plugins.babel.translation_sets', ['en']);
         foreach($codes as $code => $langdef) {
             $this->theme_variables[$langdef] = [];
         }
@@ -251,7 +252,7 @@ class Babel
                 }
             }
         }
-        $languages_folder = $locator->findResource("theme://languages/");
+        $languages_folder = $locator->findResource("themes://*/languages/");
         if (file_exists($languages_folder)) {
             $languages = [];
             $iterator = new \DirectoryIterator($languages_folder);
