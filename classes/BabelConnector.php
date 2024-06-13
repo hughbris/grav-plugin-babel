@@ -60,7 +60,6 @@ class BabelConnector extends \PDO
                     $fields = $gbabel->indexBabelData($babelobj);
                     
                     $results[] = (array) $fields;
-                    echo("Added $counter $route\n");
                 } catch (\Exception $e) {
                     echo($e->getMessage());
                     continue;
